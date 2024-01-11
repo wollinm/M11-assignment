@@ -33,8 +33,15 @@ function capitalizeEachWord(text) {
 
 //STEP 3
 function countVowels(text) {
-    let newText3 = ""
-    return newText3
+    let count = 0
+    let vowels = ['a','e','i','o','u']
+    let char = ""
+    for (char of text) {
+        if (vowels.includes(char)) {
+            count++
+        }
+    }
+    return count
 }
 //STEP 4
 function randomChars(text) {
@@ -58,6 +65,11 @@ function init() {
     //let text = "this is just a test"
     let capitalize = capitalizeEachWord(text)
     console.log("Capitalize each word result : " + capitalize)
+
+    //Step 3
+    let count = 0
+    count = countVowels(text)
+    console.log("Total vowels in string is : " + count)
 }
 
 init()
