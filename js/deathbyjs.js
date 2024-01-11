@@ -54,8 +54,19 @@ function randomChars(number) {
 
 //STEP 5
 function longestCountry(text) {
-    let newText5 = ""
-    return newText5
+    textArray = text.split(',')
+    let word = ""
+    word = textArray[0]
+    let i=0
+    let length = textArray.length
+    for (i=0; i < length ; i++) {
+        newWord = textArray[i]
+        //console.log(newWord)
+        if (newWord.length > word.length) {
+            word = newWord
+        }
+    }
+    return word
 }
 
 function init() {
@@ -80,6 +91,12 @@ function init() {
     let text4 = ""
     text4 = randomChars(number4)
     console.log("Random chars: " + text4)
+
+    //Step 5
+    let countries = prompt("Enter countries list separated by comma ")
+    let longest = ""
+    longest = longestCountry(countries)
+    console.log("Longest country name is " + longest)
 }
 
 init()
