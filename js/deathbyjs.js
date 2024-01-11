@@ -44,10 +44,14 @@ function countVowels(text) {
     return count
 }
 //STEP 4
-function randomChars(text) {
+//note:implemented code from blog
+function randomChars(number) {
+    number = number * 1
     let newText4 = ""
+    newText4 = Array(number+1).join((Math.random().toString(36)+'00000000000000000').slice(2, 18)).slice(0, number)
     return newText4
 }
+
 //STEP 5
 function longestCountry(text) {
     let newText5 = ""
@@ -59,17 +63,23 @@ function init() {
     //console.log("Entered string: " + text)
 
     //Step 1
-    //console.log("Ordered string: " + orderString(text))
+    console.log("Step 1. Ordered string: " + orderString(text))
 
     //Step 2
     //let text = "this is just a test"
     let capitalize = capitalizeEachWord(text)
-    console.log("Capitalize each word result : " + capitalize)
+    console.log("Step 2. Capitalize each word result : " + capitalize)
 
     //Step 3
     let count = 0
     count = countVowels(text)
-    console.log("Total vowels in string is : " + count)
+    console.log("Step 3. Total vowels in string is : " + count)
+
+    //Step 4
+    let number4 = prompt("Enter length: ")
+    let text4 = ""
+    text4 = randomChars(number4)
+    console.log("Random chars: " + text4)
 }
 
 init()
